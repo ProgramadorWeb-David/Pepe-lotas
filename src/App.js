@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import pepeColon from './assets/img/pepeColon.png';
+import pelota from './assets/img/pelota.png';
 import './App.css';
+import styled from 'styled-components';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={ pepeColon } alt="imagen pepe de colon"/>
+        <P>
+          PEPE-lotas : una web e-commerce que vende pelotas!
+        </P>
+        <img src={ pelota } alt="imagen pelota"/>
       </header>
     </div>
   );
 }
+
+const P = styled.p`
+    font-weight: bold;
+    color: #70ec99;
+    font-size: 40px;
+`;
 
 export default App;
