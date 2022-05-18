@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import pelota from '../assets/img/pelota.png';
+import CartWidget from '../components/CartWidget';
 
 const NavBar = () => {
     return (
@@ -18,6 +19,10 @@ const NavBar = () => {
                         <Li> <Enlaces>campito</Enlaces> </Li>
                     </Ul>
                 </div>
+
+                <Carrito>
+                    <CartWidget />
+                </Carrito>
             </ContenedorGrid>
         </Contenedor>
     );
@@ -34,7 +39,9 @@ const Contenedor = styled.nav`
 
 const ContenedorGrid = styled.div`
     display: grid;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 5% 80% 15%;
+    width: 90%;
+    margin: 0 auto;
 `;
 
 const Imagen = styled.img`
@@ -119,6 +126,11 @@ const Auxiliar = styled.a`
     color: #70ec99;
     font-size: 18px;
     padding: 5px;
+`;
+
+
+const Carrito = styled.div`
+    margin: 0 auto;
 `;
 
 export default NavBar;
