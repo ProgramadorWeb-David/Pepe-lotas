@@ -6,14 +6,21 @@ const ItemCount = ({stock, initial}) => {
     const [contador, setContador] = useState(initial);
     const [disponible, setDisponible] = useState(stock);
 
+    const decremento = () => { 
+        if (contador > 0) {
+            setContador(contador - 1);
+            setDisponible( disponible + 1 );
+        }
+    }
 
-    const decremento = () => { contador > 0 && setContador(contador - 1) }
-
-    const incremento = () => { stock > contador ? setContador(contador + 1) : alert('No hay más stock!') }
-
-    const disponibleMenos = () => { contador < stock && setDisponible( disponible - 1 ) }
-
-    const disponibleMas = () => { contador > 0 && setDisponible( disponible + 1 ) }
+    const incremento = () => { 
+        if (stock > contador) {
+            setContador(contador + 1);
+            setDisponible( disponible - 1 );
+        } else {
+            alert('No hay más stock!');
+        }
+    }
 
     return ( 
         <Contenedor>
@@ -21,17 +28,11 @@ const ItemCount = ({stock, initial}) => {
 
             <P>Cantidad de productos a comprar:</P>
             <Flex>
-                <Decremento onClick={() => {
-                    decremento();
-                    disponibleMas();
-                }}> - </Decremento>
+                <Decremento onClick={() => { decremento() }}> - </Decremento>
 
                 <Numero> {contador} </Numero>
 
-                <Incremento onClick={() => {
-                    incremento();
-                    disponibleMenos();
-                }}> + </Incremento>
+                <Incremento onClick={() => { incremento() }}> + </Incremento>
             </Flex>
 
             <BtnCarrito onClick={() => { alert('Agregado Correctamente!') }}>Agregar al carrito</BtnCarrito>
@@ -41,7 +42,7 @@ const ItemCount = ({stock, initial}) => {
 
 
 const Contenedor = styled.div`
-    width: 24%;
+    width: 300px;
     margin: auto;
     padding: 10px;
     background-color: #ccc;
@@ -82,13 +83,12 @@ const Flex = styled.div`
 `;
 
 const Decremento = styled.button`
-    /* border: 1px solid red; */
     color: white;
     background-color: #84070C;
     font-weight: bold;
     font-size: 20px;
     border-radius: 80%;
-    width: 10%;
+    width: 15%;
     transition: all 400ms;
 
     &:hover {
@@ -105,7 +105,7 @@ const Incremento = styled.button`
     font-weight: bold;
     font-size: 20px;
     border-radius: 80%;
-    width: 10%;
+    width: 15%;
     transition: all 400ms;
 
     &:hover {

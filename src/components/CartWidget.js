@@ -16,7 +16,6 @@ const P = styled.p`
     /* color: #70ec99; */
     color: #FFBF47;
     /* color: #ce9f11; */
-    margin-top: 14px;
     font-size: 24px;
     padding: 2px;
     width: 40px;

@@ -1,3 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- Globales ---- */
+ html {
+    box-sizing: border-box; /* para que tome padding margin todo en el ancho */
+    font-size: 62.5%;  /* esto hace q ahora 1rem = 10px */
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+
+body {
+font-size: 1.6rem;
+}
+
+img {
+max-width: 100%;
+display: block;
+}
+
 .App {
   text-align: center;
 }
@@ -36,6 +60,4 @@
     transform: rotate(360deg);
   }
 }
-
-
 

@@ -42,14 +42,15 @@ const ContenedorGrid = styled.div`
     grid-template-columns: 5% 80% 15%;
     width: 90%;
     margin: 0 auto;
+    align-items: center;
 `;
 
 const Imagen = styled.img`
     width: 50px;
     height: 50px;
     object-fit: cover;
-    margin: 0px;
     padding: 5px;
+    margin-top: -3px;
 `;
 
 const Ul = styled.ul`
