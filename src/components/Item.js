@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import ItemCount from './ItemCount';
-import auxImg from '../assets/img/pelota1.png';
+import pelota1 from '../assets/img/pelota1.png';
 
-const Item = ( {producto} ) => {
+// para traer las imagenes de forma dinámica
+// const prueba = require.context('../assets/img', true);
 
-    const {productName, img, stock, initial} = producto;
-    
-    console.log(img);   
+
+
+const Item = ( {producto} ) => { 
+
+    const {productName, stock, initial} = producto;
 
     return (
         <>
@@ -16,7 +19,8 @@ const Item = ( {producto} ) => {
                     <Name> {productName} </Name>
                     <Buy>Campito</Buy>
                     <Circle />
-                    <Product src={ auxImg } alt="imagen pelota" />
+                    {/* <Product src={ prueba(`./${img}`) } alt="imagen pelota" /> */}
+                    <Product src={ pelota1 } alt="imagen pelota" />
                 </Box>
                 
                 <ItemCount stock={ stock } initial={ initial } />
